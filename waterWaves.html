@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Waves Aquatic Park</title>
+</head>
+
+<body>
+    <h1>Wild Waves Aquatic Park</h1>
+    <button onclick="buyTicket()" type="button">Purchase Attraction</button>
+    <script>
+        const WAVE_POOL_MIN_HEIGHT = 42; // in inches
+        const WATERSLIDE_MIN_HEIGHT = 48; // in inches
+        const LAZY_RIVER_MIN_HEIGHT = 36; // in inches
+
+
+        function buyTicket() {
+            const attractionType = prompt('Which attraction do you want to visit: type "wave" for wave pool, "water" for waterslide, or "river" for lazy river?');
+            const userHeight = prompt('What is your height in inches?');
+            const parentPresent = prompt('Do you have a parent present?');
+            if (
+                (attractionType === "river" && userHeight >= LAZY_RIVER_MIN_HEIGHT) ||
+                (attractionType === "wave" && userHeight >= WAVE_POOL_MIN_HEIGHT) ||
+                (attractionType === "water" && userHeight >= WATERSLIDE_MIN_HEIGHT)
+            ) {
+                alert("Enjoy!");
+            } else if (userHeight >= 43 && parentPresent === "yes") {
+                alert('Enjoy');
+            } else {
+                alert("Sorry, an adult must be present.");
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
